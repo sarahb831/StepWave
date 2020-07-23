@@ -18,7 +18,7 @@ const NavBar = (props) => {
                 <div className="search-top">
                     <input />
                     <span>Search</span>
-                    <a href="" className="sign-in">
+                    <a href="#" className="sign-in">
                     Sign In
                 </a>
                 </div>
