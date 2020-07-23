@@ -127,13 +127,11 @@ body {
 }
 
 .hidden {
-  /*left: 100vw;*/
   transform: translateX(300px);
   transition: transform 0.5s linear;
 }
 
 .show {
-  /*left: 50px;*/
   transform: translate(0,0);
   transition: transform 0.5s linear;
   border-top-style: solid;
@@ -161,6 +159,7 @@ body {
 .nav-submenu__list {
   padding: 0;
 }
+
 .nav-submenu__item {
   list-style: none;
   text-align: left;
@@ -180,6 +179,17 @@ body {
   padding-top: 40px;
 }
 
+.narrow {
+  display: block;
+}
+
+.wide {
+  display: none;
+}
+
+/*  
+Wide Screen Styling
+*/
 @media(min-width: 1000px) {
 
   .search-top input {
@@ -252,4 +262,13 @@ body {
     float: left;
     padding: 0;
   }
+
+  .narrow {
+    display: none;
+  }
+
+  .wide {
+    display: block;
+  }
 }
+/* End of @media min-width: 1000px */
