@@ -1,4 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --mainLavender: #B5B6E4;
+  --mainBlue: #A0DCE4;
+  --mainGray: #707070;
+  --mainWhite: #fffff0;
+
+
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--mainGray);
+}
 .App {
+  width: 100%;
   text-align: center;
 }
 
@@ -9,30 +27,229 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 5s linear;
+    animation-direction: alternate;
   }
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--mainLavender);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--mainGray);
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--mainBlue);
 }
 
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(270deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(450deg);
+  }
+}
+
+/*    NavBar Styling
+*/
+.header-top {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  color: var(--mainGray);
+  background-color: var(--mainBlue);
+  text-align: end;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  top: 0;
+}
+
+.search-top input {
+  width: 140px;
+}
+
+.search-top span {
+  margin-left: 5px;
+  margin-right: 20px;
+}
+.sign-in {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 40px;
+}
+
+.nav-bar {
+   margin-top: 44px; 
+   padding-top: 20px;
+   background-color: var(--mainLavender);
+   color: var(--mainGray);
+   border-style: solid none;
+   border-width: thin; 
+   border-color: var(--mainGray);
+}
+
+.nav-bar a {
+     color: var(--mainGray);
+     text-decoration: none;
+     
+     
+}
+
+.nav-toggle {
+  background-color: transparent;
+  border-width: 0;
+}
+
+.nav-logo {
+  padding: 0 0 10px 0;
+}
+
+.hamburger-menu {
+  background-color: transparent;
+  border-width: 0;
+}
+
+.nav__list {
+  position: fixed;
+  width:  300px;
+  height: 100vh;
+  background-color: var(--mainBlue);
+  margin-top: 0;
+  padding-top: 20px;
+  text-align: left;
+  right: 0;
+}
+
+.hidden {
+  /*left: 100vw;*/
+  transform: translateX(300px);
+  transition: transform 0.5s linear;
+}
+
+.show {
+  /*left: 50px;*/
+  transform: translate(0,0);
+  transition: transform 0.5s linear;
+  border-top-style: solid;
+  border-width: thin;
+}
+
+.nav__item {
+  list-style: none;
+  padding: 8px 0;
+  font-size: 18px;
+}
+
+.caret {
+  position: absolute;
+  right: 20px;
+  border-style: none;
+  background-color: transparent;
+}
+
+.nav-toggle {
+  position: absolute;
+  right: 1em;
+}
+
+.nav-submenu__list {
+  padding: 0;
+}
+.nav-submenu__item {
+  list-style: none;
+  text-align: left;
+  padding: 10px 10px 0px 25px;
+}
+
+/* Intro Section */
+
+.intro {
+  background-color: var(--mainBlue);
+  height: fit-content;
+  padding-bottom: 20px;
+}
+
+.intro-image {
+  width: calc(100vw - 40px);
+  padding-top: 40px;
+}
+
+@media(min-width: 1000px) {
+
+  .search-top input {
+    width: 140px;
+  }
+  
+  .nav-bar {
+    width: 100vw;
+    height: 75px;
+    padding-top: 30px;
+  }
+
+  .nav-logo {
+    position: absolute;
+    left: 60px;
+  }
+  .hamburger-menu {
+    display: none;
+  }
+
+  .nav__list {
+    position: absolute;
+    width:  fit-content;
+    height: auto;
+    background-color: transparent;
+    margin-top: -30px;
+    margin-right: 20px;
+    text-align: center;  
+  }
+
+  .hidden,
+  .show {
+    transform: none;
+  }
+
+  .nav__item {
+    display: inline-block;
+    padding-right: 20px;
+    font-size: 16px;
+    vertical-align: text-top;
+  }
+
+  .caret {
+    position: relative;
+    right: 0;
+  }
+
+  .nav-submenu__list {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--mainWhite);
+    margin-top: 43px;
+    border-style: groove;
+    border-width: thin;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  .intro {
+    height: 360px;
+    padding: 40px;
+  
+  }
+
+  .intro-image {
+    width: 500px;
+    float: left;
+    padding: 0;
   }
 }
