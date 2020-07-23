@@ -1,4 +1,4 @@
-//import React, { useState } from 'react';
+import React from 'react';
 import IntroImage from '../img/FactoryImage1.png';
 
 const Intro = (props) => {
