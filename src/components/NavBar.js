@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const NavBar = (props) => {
     const [showMenu, setShowMenu] = useState(false);
@@ -12,15 +13,20 @@ const NavBar = (props) => {
         setShowManMenu(!showManMenu);
     }
 
+    const manMenuClose = () => {
+        setShowMenu(false);
+        setShowManMenu(false);
+    }
+
     return (
         <header>
             <div className="header-top">
                 <div className="search-top">
                     <input />
                     <span>Search</span>
-                    <a href="#sign-in" className="sign-in">
+                    <Link to="/sign-in" className="sign-in">
                     Sign In
-                </a>
+                </Link>
                 </div>
                 
             </div>
@@ -30,62 +36,136 @@ const NavBar = (props) => {
                 <button className="nav-toggle" onClick={menuToggle} aria-label="toggle navigation">
                     <span className="hamburger-menu">
                         {showMenu 
-                            ? <i class="fas fa-times"></i>
-                            : <i class="fas fa-bars"></i>
+                            ? <i className="fas fa-times"></i>
+                            : <i className="fas fa-bars"></i>
                         }
                     </span>
                 </button>
                 <ul className={`${showMenu ? "nav__list show" : "nav__list hidden"}`}>
-                    <li className="nav__item"><a href="#products" className="nav__link">Products</a></li>
-                    <li className="nav__item"><a href="#customers" className="nav__link">Customers</a></li>
-                    <li className="nav__item"><a href="#manufacturers" className="nav__link">
+                    <li className="nav__item"><Link to="/products" className="nav__link">Products</Link></li>
+                    <li className="nav__item"><Link to="/customers" className="nav__link">Customers</Link></li>
+                    <li className="nav__item"><div className="nav__link">
                             {`Manufacturers`}
-                            <button class="caret" onClick={manMenuToggle}> 
-                            {showManMenu ? <i  class="fas fa-caret-up" />
-                                : <i class="fas fa-caret-down" />
+                            <button className="caret" onClick={manMenuToggle}> 
+                            {showManMenu 
+                                ? <i className="fas fa-caret-up" />
+                                : <i className="fas fa-caret-down" />
                             }
-                            </button>
-                            
-                        </a>
+                            </button>                            
+                        </div>
+                        {showManMenu &&
+                            <ul className="narrow nav-submenu__list">
+                                <li  className="nav-submenu__item">
+                                <Link 
+                                    to="/contact-info" 
+                                    className="nav-submenu__link"
+                                    onClick={manMenuClose}
+                                >Contact Info</Link>
+                                </li>
+                                <li className="nav-submenu__item">
+                                    <Link 
+                                        to="/company-profile" 
+                                        className="nav-submenu__link"
+                                        onClick={manMenuClose}
+                                    >
+                                        Company Profile
+                                    </Link>
+                                </li>
+                                <li className="nav-submenu__item">
+                                    <Link 
+                                        to="/compliance-credentials" 
+                                        className="nav-submenu__link"
+                                        onClick={manMenuClose}
+                                    >
+                                        {`Compliance & Credentials  `}
+                                        <i className="fas fa-lock"></i>
+                                    </Link>
+                                </li>
+                                <li className="nav-submenu__item">
+                                    <Link 
+                                        to="/quality-governance" 
+                                        className="nav-submenu__link"
+                                        onClick={manMenuClose}
+                                    >
+                                        {`Quality & Governance  `}
+                                        <i className="fas fa-lock"></i>
+                                    </Link>
+                                </li>
+                                <li className="nav-submenu__item">
+                                    <Link 
+                                        to="/available-capacity" 
+                                        className="nav-submenu__link"
+                                        onClick={manMenuClose}
+                                    >
+                                        {`Available Capacity  `}
+                                        <i className="fas fa-lock"></i>
+                                    </Link>
+                                </li>
+                            </ul>
+                        }
                     </li>
-                    <li className="nav__item"><a href="#resources" className="nav__link">Resources</a></li>
-                    <li className="nav__item"><a href="#events" className="nav__link">Events</a></li>
-                    <li className="nav__item"><a href="#about" className="nav__link">About StepWave</a></li>
-                    <li className="nav__item"><a href="#contact" className="nav__link">Contact Us</a></li>                    
+                    <li className="nav__item"><Link to="/resources" className="nav__link">Resources</Link></li>
+                    <li className="nav__item"><Link to="/events" className="nav__link">Events</Link></li>
+                    <li className="nav__item"><Link to="/about" className="nav__link">About StepWave</Link></li>
+                    <li className="nav__item"><Link to="/contact-us" className="nav__link">Contact Us</Link></li>                    
                 </ul>
 
                 {showManMenu &&
-                    <ul className="nav-submenu__list">
+                    <ul className="wide fade-in nav-submenu__list">
                         <li className="nav-submenu__item">
-                            <a href="#contact-info" className="nav-submenu__link">Contact Info</a>
+                            <Link 
+                                to="/contact-info" 
+                                className="nav-submenu__link" 
+                                onClick={manMenuClose}
+                            >
+                                Contact Info
+                            </Link>
                         </li>
                         <li className="nav-submenu__item">
-                            <a href="#company-profile" className="nav-submenu__link">Company Profile</a>
+                            <Link 
+                                to="/company-profile" 
+                                className="nav-submenu__link"
+                                onClick={manMenuClose}
+                            >
+                                Company Profile
+                            </Link>
                         </li>
                         <li className="nav-submenu__item">
-                            <a href="#compliance-credentials" className="nav-submenu__link">
+                            <Link 
+                                to="/compliance-credentials" 
+                                className="nav-submenu__link"
+                                onClick={manMenuClose}
+                            >
                                 {`Compliance & Credentials  `}
-                                <i class="fas fa-lock"></i>
-                            </a>
+                                <i className="fas fa-lock"></i>
+                            </Link>
                         </li>
                         <li className="nav-submenu__item">
-                            <a href="#quality-governance" className="nav-submenu__link">
+                            <Link 
+                                to="/quality-governance" 
+                                className="nav-submenu__link"
+                                onClick={manMenuClose}
+                            >
                                 {`Quality & Governance  `}
-                                <i class="fas fa-lock"></i>
-                            </a>
+                                <i className="fas fa-lock"></i>
+                            </Link>
                         </li>
                         <li className="nav-submenu__item">
-                            <a href="#available-capacity" className="nav-submenu__link">
+                            <Link 
+                                to="/available-capacity" 
+                                className="nav-submenu__link"
+                                onClick={manMenuClose}
+                            >
                                 {`Available Capacity  `}
-                                <i class="fas fa-lock"></i>
-                            </a>
+                                <i className="fas fa-lock"></i>
+                            </Link>
                         </li>
                     </ul>
-                        }
+                }
             </nav>
         </header>
-    )
+    );
 
-}
+};
 
 export default NavBar;
