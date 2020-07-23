@@ -32,7 +32,9 @@ const NavBar = (props) => {
             </div>
             
             <nav className="nav-bar">
-            <img className="nav-logo" src="img/StepWaveLogo.png" alt="StepWave" />
+                <Link to="/">
+                    <img className="nav-logo" src="img/StepWaveLogo.png" alt="StepWave" />
+                </Link>
                 <button className="nav-toggle" onClick={menuToggle} aria-label="toggle navigation">
                     <span className="hamburger-menu">
                         {showMenu 
