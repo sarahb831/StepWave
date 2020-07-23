@@ -19,7 +19,7 @@ const Intro = (props) => {
             </h2>
     */}
         </div>
-    )
-}
+    );
+};
 
 export default Intro;

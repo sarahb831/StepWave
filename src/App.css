@@ -117,7 +117,7 @@ body {
 
 .nav__list {
   position: fixed;
-  width:  300px;
+  width:  340px;
   height: 100vh;
   background-color: var(--mainBlue);
   margin-top: 0;
@@ -127,7 +127,7 @@ body {
 }
 
 .hidden {
-  transform: translateX(300px);
+  transform: translateX(360px);
   transition: transform 0.5s linear;
 }
 
