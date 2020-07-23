@@ -44,9 +44,36 @@ const NavBar = (props) => {
                             {showManMenu ? <i  class="fas fa-caret-up" />
                                 : <i class="fas fa-caret-down" />
                             }
-                            </button>
-                            
+                            </button>                            
                         </a>
+                        {showManMenu &&
+                            <ul className="narrow nav-submenu__list">
+                                <li className="nav-submenu__item">
+                                    <a href="#contact-info" className="nav-submenu__link">Contact Info</a>
+                                </li>
+                                <li className="nav-submenu__item">
+                                    <a href="#company-profile" className="nav-submenu__link">Company Profile</a>
+                                </li>
+                                <li className="nav-submenu__item">
+                                    <a href="#compliance-credentials" className="nav-submenu__link">
+                                        {`Compliance & Credentials  `}
+                                        <i class="fas fa-lock"></i>
+                                    </a>
+                                </li>
+                                <li className="nav-submenu__item">
+                                    <a href="#quality-governance" className="nav-submenu__link">
+                                        {`Quality & Governance  `}
+                                        <i class="fas fa-lock"></i>
+                                    </a>
+                                </li>
+                                <li className="nav-submenu__item">
+                                    <a href="#available-capacity" className="nav-submenu__link">
+                                        {`Available Capacity  `}
+                                        <i class="fas fa-lock"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        }
                     </li>
                     <li className="nav__item"><a href="#resources" className="nav__link">Resources</a></li>
                     <li className="nav__item"><a href="#events" className="nav__link">Events</a></li>
@@ -55,7 +82,7 @@ const NavBar = (props) => {
                 </ul>
 
                 {showManMenu &&
-                    <ul className="nav-submenu__list">
+                    <ul className="wide fade-in nav-submenu__list">
                         <li className="nav-submenu__item">
                             <a href="#contact-info" className="nav-submenu__link">Contact Info</a>
                         </li>
