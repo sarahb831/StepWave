@@ -86,12 +86,13 @@ body {
 
 .nav-bar {
    margin-top: 44px; 
-   padding-top: 20px;
+   padding-top: 28px;
    background-color: var(--mainLavender);
    color: var(--mainGray);
    border-style: solid none;
    border-width: thin; 
    border-color: var(--mainGray);
+   height: 75px;
 }
 
 .nav-bar a {
