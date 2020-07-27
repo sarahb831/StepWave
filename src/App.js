@@ -5,7 +5,7 @@ import './App.css';
 import NavBar from './components/NavBar.js';
 import Intro from './components/Intro.js';
 import SignIn from './components/SignIn.js';
-import Products from  './components/Products.js';
+import Products from  './components/products/Products.js';
 import Customers from  './components/Customers.js';
 import ContactInfo from  './components/manufacturers/ContactInfo.js';
 import CompanyProfile from  './components/manufacturers/CompanyProfile.js';
