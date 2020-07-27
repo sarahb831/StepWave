@@ -241,6 +241,16 @@ a.nav__link, div.nav__link, a.nav-submenu__link, i.fas {
   border-width: thin;
 }
 
+.form-submit {
+  width: 100px;
+  height: 30px;
+  margin-top: 40px;
+  font-weight: bold;
+  background-color: var(--background2);
+  font-size: 14px;
+  border-radius: 4px;
+}
+
 @media(min-width: 500px) {
   .form-container {
     grid-template-columns: 1fr 1fr;

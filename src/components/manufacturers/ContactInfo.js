@@ -30,103 +30,114 @@ const ContactInfo = (props) => {
         }
     };
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('form submitted');
+    }
+
     
 
     return (
         <div className="contact-info">
             <h2 className="form-title">Contact Info</h2>
             <h3 className="header-form">Please provide the following</h3>
-            <form className="form-container">
-                <div className="input-container">
-                    <p className="input">First Name: </p>
-                    <input 
-                        className="form-input"
-                        type="text"
-                        name="firstName"
-                        onChange={handleChange}
-                    />
+            <form onSubmit={handleSubmit}>
+                <div className="form-container">
+                    <div className="input-container">
+                        <p className="input">First Name: </p>
+                        <input 
+                            className="form-input"
+                            type="text"
+                            name="firstName"
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="input-container">
+                        <p className="input">Last Name: </p>
+                        <input 
+                            className="form-input"
+                            type="text"
+                            name="lastName"
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="input-container">
+                        <p className="input">Job Title: </p>
+                        <input 
+                            className="form-input"
+                            type="text"
+                            name="jobTitle"
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="input-container">
+                        <p className="input">Address: </p>
+                        <input 
+                            className="form-input"
+                            type="text"
+                            name="address"
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="input-container">
+                        <p className="input">City: </p>
+                        <input 
+                            className="form-input"
+                            type="text"
+                            name="city"
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="input-container">
+                        <p className="input">State: </p>
+                        <input 
+                            className="form-input"
+                            type="text"
+                            name="stateAddress"
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="input-container">
+                        <p className="input">Zipcode: </p>
+                        <input 
+                            className="form-input"
+                            type="text"
+                            name="zipcode"
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="input-container">
+                        <p className="input">Country: </p>
+                        <input 
+                            className="form-input"
+                            type="text"
+                            name="country"
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="input-container">
+                        <p className="input">Email: </p>
+                        <input 
+                            className="form-input"
+                            type="email"
+                            name="email"
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="input-container">
+                        <p className="input">Phone: </p>
+                        <input 
+                            className="form-input"
+                            type="text"
+                            name="phone"
+                            onChange={handleChange}
+                        />
+                    </div>
                 </div>
-                <div className="input-container">
-                    <p className="input">Last Name: </p>
-                    <input 
-                        className="form-input"
-                        type="text"
-                        name="lastName"
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className="input-container">
-                    <p className="input">Job Title: </p>
-                    <input 
-                        className="form-input"
-                        type="text"
-                        name="jobTitle"
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className="input-container">
-                    <p className="input">Address: </p>
-                    <input 
-                        className="form-input"
-                        type="text"
-                        name="address"
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className="input-container">
-                    <p className="input">City: </p>
-                    <input 
-                        className="form-input"
-                        type="text"
-                        name="city"
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className="input-container">
-                    <p className="input">State: </p>
-                    <input 
-                        className="form-input"
-                        type="text"
-                        name="stateAddress"
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className="input-container">
-                    <p className="input">Zipcode: </p>
-                    <input 
-                        className="form-input"
-                        type="text"
-                        name="zipcode"
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className="input-container">
-                    <p className="input">Country: </p>
-                    <input 
-                        className="form-input"
-                        type="text"
-                        name="country"
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className="input-container">
-                    <p className="input">Email: </p>
-                    <input 
-                        className="form-input"
-                        type="email"
-                        name="email"
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className="input-container">
-                    <p className="input">Phone: </p>
-                    <input 
-                        className="form-input"
-                        type="text"
-                        name="phone"
-                        onChange={handleChange}
-                    />
-                </div>
+                <input 
+                    className="form-submit"
+                    type="submit"
+                />
             </form>
             
             
