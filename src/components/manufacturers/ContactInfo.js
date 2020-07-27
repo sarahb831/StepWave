@@ -15,7 +15,22 @@ const ContactInfo = (props) => {
 
     const handleChange = (event) => {
         setFirstName(event.target.value);
+        if (false ){
+            console.log(firstName, lastName, jobTitle, address, city, stateAddress, zipcode, country, email, phone);
+    
+            setLastName('');
+            setJobTitle('');
+            setAddress('');
+            setCity('');
+            setStateAddress('');
+            setZipcode('');
+            setCountry('');
+            setEmail('a@b.com');
+            setPhone('');
+        }
     };
+
+    
 
     return (
         <div className="contact-info">
