@@ -134,10 +134,12 @@ const ContactInfo = (props) => {
                         />
                     </div>
                 </div>
-                <input 
+                <button 
                     className="form-submit"
                     type="submit"
-                />
+                >
+                    Submit
+                </button>
             </form>
             
             

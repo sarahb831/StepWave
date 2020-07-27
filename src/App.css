@@ -246,7 +246,8 @@ a.nav__link, div.nav__link, a.nav-submenu__link, i.fas {
   height: 30px;
   margin-top: 40px;
   font-weight: bold;
-  background-color: var(--background2);
+  background-color: var(--background3);
+  color: var(--mainWhite);
   font-size: 14px;
   border-radius: 4px;
 }
