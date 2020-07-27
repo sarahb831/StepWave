@@ -1,5 +1,5 @@
 import React from 'react';
-import IntroImage from '../img/FactoryImage1.png';
+import IntroImage from '../img/FactoryImage1.jpg';
 
 const Intro = (props) => {
     return (

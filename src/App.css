@@ -7,6 +7,9 @@
   --mainBlue: #A0DCE4;
   --mainGray: #707070;
   --mainWhite: #fffff0;
+  --background1: #1b2f54;
+  --background2: #ff6714;
+  --background3: #00b5ef;
 
 
 }
@@ -33,18 +36,18 @@ body {
 }
 
 .App-header {
-  background-color: var(--mainLavender);
+  background-color: var(--background1);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: var(--mainGray);
+  color: var(--mainWhite);
 }
 
 .App-link {
-  color: var(--mainBlue);
+  color: var(--background3);
 }
 
 @keyframes App-logo-spin {
@@ -62,12 +65,16 @@ body {
   position: fixed;
   z-index: 1000;
   width: 100%;
-  color: var(--mainGray);
-  background-color: var(--mainBlue);
+  color: var(--mainWhite);
+  background-color: var(--background3);
   text-align: end;
   padding-top: 10px;
   padding-bottom: 10px;
   top: 0;
+}
+
+a, i {
+  color: var(--mainWhite);
 }
 
 .search-top input {
@@ -78,17 +85,19 @@ body {
   margin-left: 5px;
   margin-right: 20px;
 }
+
 .sign-in {
   display: inline-block;
   margin-left: 10px;
   margin-right: 40px;
+  color: var(--mainWhite);
 }
 
 .nav-bar {
    margin-top: 44px; 
    padding-top: 28px;
-   background-color: var(--mainLavender);
-   color: var(--mainGray);
+   background-color: var(--background1);
+   color: var(--mainWhite);
    border-style: solid none;
    border-width: thin; 
    border-color: var(--mainGray);
@@ -96,7 +105,7 @@ body {
 }
 
 .nav-bar a {
-     color: var(--mainGray);
+     color: var(--mainWhite);
      text-decoration: none;
      
      
@@ -116,11 +125,15 @@ body {
   border-width: 0;
 }
 
+i.fas.fa-times, i.fas.fa-bars {
+  color: var(--mainWhite);
+}
+
 .nav__list {
   position: fixed;
   width:  340px;
   height: 100vh;
-  background-color: var(--mainBlue);
+  background-color: var(--background3);
   margin-top: 0;
   padding-top: 20px;
   text-align: left;
@@ -165,12 +178,17 @@ body {
   list-style: none;
   text-align: left;
   padding: 10px 10px 0px 25px;
+  color: var(--mainWhite);
+}
+
+a.nav__link, div.nav__link, a.nav-submenu__link, i.fas {
+  color: var(--mainWhite);
 }
 
 /* Intro Section */
 
 .intro {
-  background-color: var(--mainBlue);
+  background-color: var(--background3);
   height: fit-content;
   padding-bottom: 20px;
 }
@@ -178,6 +196,10 @@ body {
 .intro-image {
   width: calc(100vw - 40px);
   padding-top: 40px;
+}
+
+.intro-text {
+  color: var(--mainWhite);
 }
 
 .narrow {
@@ -188,6 +210,47 @@ body {
   display: none;
 }
 
+.products {
+  color: var(--mainGray);
+}
+
+.contact-info {
+  padding: 30px;
+}
+
+.form-title {
+  text-align: left;
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.input {
+  font-size: 14px;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.form-input {
+  height: 2em;
+  width: 100%;
+  border-color: lightgrey;
+  border-style: solid;
+  border-width: thin;
+}
+
+@media(min-width: 500px) {
+  .form-container {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1em;
+  }
+
+  .form-input {
+    width: 100%;
+  }
+}
 /*  
 Wide Screen Styling
 */
@@ -249,7 +312,10 @@ Wide Screen Styling
     padding: 20px;
     margin-left: auto;
     margin-right: auto;
+  }
 
+  a.nav-submenu__link {
+    color: var(--mainGray);
   }
 
   .intro {
@@ -271,5 +337,6 @@ Wide Screen Styling
   .wide {
     display: block;
   }
+
 }
 /* End of @media min-width: 1000px */

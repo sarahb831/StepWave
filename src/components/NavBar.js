@@ -9,6 +9,10 @@ const NavBar = (props) => {
         setShowMenu(!showMenu);
     }
 
+    const menuClose = () => {
+        setShowMenu(false);
+    }
+
     const manMenuToggle = () => {
         setShowManMenu(!showManMenu);
     }
@@ -32,7 +36,10 @@ const NavBar = (props) => {
             </div>
             
             <nav className="nav-bar">
-                <Link to="/">
+                <Link 
+                    to="/"
+                    onClick={menuClose}
+                >
                     <img className="nav-logo" src="img/StepWaveLogo.png" alt="StepWave" />
                 </Link>
                 <button className="nav-toggle" onClick={menuToggle} aria-label="toggle navigation">
@@ -44,8 +51,24 @@ const NavBar = (props) => {
                     </span>
                 </button>
                 <ul className={`${showMenu ? "nav__list show" : "nav__list hidden"}`}>
-                    <li className="nav__item"><Link to="/products" className="nav__link">Products</Link></li>
-                    <li className="nav__item"><Link to="/customers" className="nav__link">Customers</Link></li>
+                    <li className="nav__item">
+                        <Link 
+                            to="/products" 
+                            className="nav__link"
+                            onClick={menuClose}
+                        >
+                            Products
+                        </Link>
+                    </li>
+                    <li className="nav__item">
+                        <Link 
+                            to="/customers" 
+                            className="nav__link"
+                            onClick={menuClose}
+                        >
+                            Customers
+                        </Link>
+                    </li>
                     <li className="nav__item"><div className="nav__link">
                             {`Manufacturers`}
                             <button className="caret" onClick={manMenuToggle}> 
