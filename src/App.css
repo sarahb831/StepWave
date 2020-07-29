@@ -214,7 +214,11 @@ a.nav__link, div.nav__link, a.nav-submenu__link, i.fas {
   color: var(--mainGray);
 }
 
-.contact-info {
+/***********
+Manufacturing Forms
+************/
+.contact-info,
+.compliance-credentials {
   padding: 30px;
 }
 
@@ -227,18 +231,83 @@ a.nav__link, div.nav__link, a.nav-submenu__link, i.fas {
   grid-template-columns: 1fr;
 }
 
-.input {
+.checkbox-container,
+.radio-container {
+  display: grid;
+  width: 50%;
+  min-width: 200px;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.checkbox-container {
+  display: block;
+  width: 100%;
+}
+
+.checkbox-label {
+  font-size: 14px;
+  padding-left: 5px;
+  padding-right: 25px;
+}
+
+.radio-group,
+.radio {
+  display: inline-block;
+}
+
+.radio-group {
+  padding-top: 5px;
+}
+
+.radio-label {
+  font-size: 14px;
+  padding-left: 5px;
+}
+
+.input-container {
+  padding-bottom: 20px;
+}
+
+.input, 
+.input-header,
+.input-sub {
   font-size: 14px;
   margin-bottom: 0;
   text-align: left;
 }
 
-.form-input {
+.input-header {
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.input-sub {
+  margin-top: 0;
+}
+
+.form-input,
+.form-input-detail {
   height: 2em;
   width: 100%;
   border-color: lightgrey;
   border-style: solid;
   border-width: thin;
+}
+
+.form-input-detail {
+  width: 200px;
+  margin-left: 20px;
+  margin-right: calc(100% - 200px - 20px);
+}
+
+.input-detail {
+  font-size: 14px;
+  text-align: left;
+  padding-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 0;
 }
 
 .form-submit {
@@ -255,7 +324,7 @@ a.nav__link, div.nav__link, a.nav-submenu__link, i.fas {
 @media(min-width: 500px) {
   .form-container {
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1em;
+    grid-column-gap: 2em;
   }
 
   .form-input {
