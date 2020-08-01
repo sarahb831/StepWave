@@ -4,7 +4,7 @@ const ComplianceCredentials = (props) => {
     // todo 072820: get handleSubmit or onSubmit from parent as prop, also initialValues
     // todo 072820: get unlocked from parent as prop
 
-    const [unlocked, setUnlocked] = useState(props.unlocked || true);
+    //const [unlocked, setUnlocked] = useState(props.unlocked || true);
 
     const initialValues = {
         certificationISO11135: '',
