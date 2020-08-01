@@ -1,41 +1,45 @@
 import React, { useState } from 'react';
 
 const ContactInfo = (props) => {
+// todo 072820: get handleSubmit or onSubmit from parent as prop, also initialValues
 
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [jobTitle, setJobTitle] = useState('');
-    const [address, setAddress] = useState('');
-    const [city, setCity] = useState('');
-    const [stateAddress, setStateAddress] = useState('');
-    const [zipcode, setZipcode] = useState('');
-    const [country, setCountry] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
-
-    const handleChange = (event) => {
-        setFirstName(event.target.value);
-        if (false ){
-            console.log(firstName, lastName, jobTitle, address, city, stateAddress, zipcode, country, email, phone);
-    
-            setLastName('');
-            setJobTitle('');
-            setAddress('');
-            setCity('');
-            setStateAddress('');
-            setZipcode('');
-            setCountry('');
-            setEmail('a@b.com');
-            setPhone('');
-        }
+    const initialValues = {
+        firstName: '',
+        lastName: '',
+        jobTitle: '',
+        address: '',
+        city: '',
+        stateAddress: '',
+        zipcode: '',
+        country: '',
+        email: '',
+        phone: ''
     };
 
+    const [values, setValues] = useState(initialValues || {});
+   
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('form submitted');
+        console.log('handleSubmit values', values);
     }
 
-    
+    const handleChange = (event) => {
+        const { target } = event;
+        const {name, value } = target;
+        event.persist();
+        setValues({...values, [name]: value });
+    };
+
+    /*
+    const {
+        values,
+        //errors,
+        //touched,
+        handleChange,
+        //handleBlur,
+        handleSubmit
+    } = useCustomForm({ initialValues, onSubmit });
+    */
 
     return (
         <div className="contact-info">
@@ -50,6 +54,7 @@ const ContactInfo = (props) => {
                             type="text"
                             name="firstName"
                             onChange={handleChange}
+                            value={values.firstName}
                         />
                     </div>
                     <div className="input-container">
@@ -59,6 +64,7 @@ const ContactInfo = (props) => {
                             type="text"
                             name="lastName"
                             onChange={handleChange}
+                            value={values.lastName}
                         />
                     </div>
                     <div className="input-container">
@@ -68,6 +74,7 @@ const ContactInfo = (props) => {
                             type="text"
                             name="jobTitle"
                             onChange={handleChange}
+                            value={values.jobTitle}
                         />
                     </div>
                     <div className="input-container">
@@ -77,6 +84,7 @@ const ContactInfo = (props) => {
                             type="text"
                             name="address"
                             onChange={handleChange}
+                            value={values.address}
                         />
                     </div>
                     <div className="input-container">
@@ -86,6 +94,7 @@ const ContactInfo = (props) => {
                             type="text"
                             name="city"
                             onChange={handleChange}
+                            value={values.city}
                         />
                     </div>
                     <div className="input-container">
@@ -95,6 +104,7 @@ const ContactInfo = (props) => {
                             type="text"
                             name="stateAddress"
                             onChange={handleChange}
+                            value={values.stateAddress}
                         />
                     </div>
                     <div className="input-container">
@@ -104,6 +114,7 @@ const ContactInfo = (props) => {
                             type="text"
                             name="zipcode"
                             onChange={handleChange}
+                            value={values.zipcode}
                         />
                     </div>
                     <div className="input-container">
@@ -113,6 +124,7 @@ const ContactInfo = (props) => {
                             type="text"
                             name="country"
                             onChange={handleChange}
+                            value={values.country}
                         />
                     </div>
                     <div className="input-container">
@@ -122,6 +134,7 @@ const ContactInfo = (props) => {
                             type="email"
                             name="email"
                             onChange={handleChange}
+                            value={values.email}
                         />
                     </div>
                     <div className="input-container">
@@ -131,6 +144,7 @@ const ContactInfo = (props) => {
                             type="text"
                             name="phone"
                             onChange={handleChange}
+                            value={values.phone}
                         />
                     </div>
                 </div>
