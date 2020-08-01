@@ -21,6 +21,18 @@ const ComplianceCredentials = (props) => {
         iso9002Certified: '',
         otherISOCertified: '',
         dateLastIsoAudit: '',
+        qualityAssuranceFunction: '',
+        reviewContractsWithCustomers: '',
+        documentChangeControlProcedure: '',
+        maintainCustomerComplaintFiles: '',
+        nonconformingMaterialSystem: '',
+        correctiveActionSystem: '',
+        qualifyVendors: '',
+        documentInspectionProcedures: '',
+        calibrationSystem: '',
+        documentedTraining: '',
+        shippingAndHandlingProcedure: '',
+
     };
 
     const [values, setValues] = useState(initialValues || {});
@@ -127,7 +139,7 @@ const ComplianceCredentials = (props) => {
                     </div>
 
                     <div className="input-container">
-                        <p className="input-header">Please answer all questions below.  Answer "N/A" if it doesn't apply: </p>
+                        <p className="input-header">Please answer all the following questions.  Answer "N/A" if it doesn't apply: </p>
                         <p className="input-sub">3.  FDA registered? </p>                
                         <div className="radio-container">
                             <div className="radio-group">
@@ -189,9 +201,9 @@ const ComplianceCredentials = (props) => {
                                 <input
                                     className="radio"
                                     type="radio"
-                                    name="certificationISO11135"
+                                    name="form483"
                                     value="Yes"
-                                    checked={values.certificationISO11135 === "Yes"}
+                                    checked={values.form483 === "Yes"}
                                     onChange={handleChange}
                                 />
                                 <label className="radio-label">Yes</label>
@@ -200,9 +212,9 @@ const ComplianceCredentials = (props) => {
                                 <input
                                     className="radio"
                                     type="radio"
-                                    name="certificationISO11135"
+                                    name="form483"
                                     value="No"
-                                    checked={values.certificationISO11135 === "No"}
+                                    checked={values.form483 === "No"}
                                     onChange={handleChange}
                                 />
                                 <label className="radio-label">No</label>
@@ -211,9 +223,9 @@ const ComplianceCredentials = (props) => {
                                 <input
                                      className="radio"
                                      type="radio"
-                                    name="certificationISO11135"
+                                    name="form483"
                                     value="N/A"
-                                    checked={values.certificationISO11135 === "N/A"}
+                                    checked={values.form483 === "N/A"}
                                     onChange={handleChange}
                                 />
                                 <label className="radio-label">N/A</label>
@@ -222,7 +234,7 @@ const ComplianceCredentials = (props) => {
                     </div>
 
                     <div className="input-container">
-                        <p className="input-sub">5.  Documented quality system?</p>                
+                        <p className="input-sub">5.  Do you have a documented quality system?</p>                
                         <div className="radio-container">
                             <div className="radio-group">
                                 <input
@@ -298,7 +310,8 @@ const ComplianceCredentials = (props) => {
                                 <label className="radio-label">N/A</label>
                             </div>
                         </div>
-                        <p className="input-sub">If yes, please send copy of Quality Manual.</p>                
+                        <p className="input-detail"><br /></p>
+                        <p className="input-detail">If yes, please send copy of Quality Manual.</p>                
                         
                     </div>
 
@@ -350,7 +363,7 @@ const ComplianceCredentials = (props) => {
                                 <label className="radio-label">N/A</label>
                             </div>
                         </div>
-                        <p className="input-sub">Mark all that apply: </p> 
+                        <p className="input-detail">Mark all that apply: </p> 
                         <div className="checkbox-container">              
                             <div className="radio-group">
                                 <input
@@ -381,78 +394,457 @@ const ComplianceCredentials = (props) => {
                             onChange={handleChange}
                             value={values.otherISOCertified}
                         />
-                    </div>
+                        <p className="input-detail"><br /></p>
+                        <p className="input-detail">Date of last ISO audit </p> 
+                        <input 
+                            className="form-input-detail"
+                            type="text"
+                            name="dateLastIsoAudit"
+                            onChange={handleChange}
+                            value={values.dateLastIsoAudit}
+                        />
 
-                    <div className="input-container">
-                        <p className="input">Address: </p>
-                        <input 
-                            className="form-input"
-                            type="text"
-                            name="address"
-                            onChange={handleChange}
-                            value={values.address}
-                        />
+                        <p className="input-detail"><br /></p>
+                        <p className="input-detail">if yes, please send copy of certifications and organization chart. </p> 
                     </div>
-                    <div className="input-container">
-                        <p className="input">City: </p>
-                        <input 
-                            className="form-input"
-                            type="text"
-                            name="city"
-                            onChange={handleChange}
-                            value={values.city}
-                        />
-                    </div>
-                    <div className="input-container">
-                        <p className="input">State: </p>
-                        <input 
-                            className="form-input"
-                            type="text"
-                            name="stateAddress"
-                            onChange={handleChange}
-                            value={values.stateAddress}
-                        />
-                    </div>
-                    <div className="input-container">
-                        <p className="input">Zipcode: </p>
-                        <input 
-                            className="form-input"
-                            type="text"
-                            name="zipcode"
-                            onChange={handleChange}
-                            value={values.zipcode}
-                        />
-                    </div>
-                    <div className="input-container">
-                        <p className="input">Country: </p>
-                        <input 
-                            className="form-input"
-                            type="text"
-                            name="country"
-                            onChange={handleChange}
-                            value={values.country}
-                        />
-                    </div>
-                    <div className="input-container">
-                        <p className="input">Email: </p>
-                        <input 
-                            className="form-input"
-                            type="email"
-                            name="email"
-                            onChange={handleChange}
-                            value={values.email}
-                        />
-                    </div>
-                    <div className="input-container">
-                        <p className="input">Phone: </p>
-                        <input 
-                            className="form-input"
-                            type="text"
-                            name="phone"
-                            onChange={handleChange}
-                            value={values.phone}
-                        />
-                    </div>
+                    {values.qualitySystemISOCertified !== 'Yes'
+                    ? <>
+                        <div className="input-container">
+                            <p className="input-sub">9.  Do you have a Quality Assurance function?</p>                
+                            <div className="radio-container">
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="qualityAssuranceFunction"
+                                        value="Yes"
+                                        checked={values.qualityAssuranceFunction === "Yes"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">Yes</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="qualityAssuranceFunction"
+                                        value="No"
+                                        checked={values.qualityAssuranceFunction === "No"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">No</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="qualityAssuranceFunction"
+                                        value="N/A"
+                                        checked={values.qualityAssuranceFunction === "N/A"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">N/A</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="input-container">
+                            <p className="input-sub">10.  Do you review all contracts with customers before acceptance?</p>                
+                            <div className="radio-container">
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="reviewContractsWithCustomers"
+                                        value="Yes"
+                                        checked={values.reviewContractsWithCustomers === "Yes"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">Yes</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="reviewContractsWithCustomers"
+                                        value="No"
+                                        checked={values.reviewContractsWithCustomers === "No"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">No</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="reviewContractsWithCustomers"
+                                        value="N/A"
+                                        checked={values.reviewContractsWithCustomers === "N/A"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">N/A</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="input-container">
+                            <p className="input-sub">11.  Do you have a document change control procedure?</p>                
+                            <div className="radio-container">
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="documentChangeControlProcedure"
+                                        value="Yes"
+                                        checked={values.documentChangeControlProcedure === "Yes"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">Yes</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="documentChangeControlProcedure"
+                                        value="No"
+                                        checked={values.documentChangeControlProcedure === "No"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">No</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="documentChangeControlProcedure"
+                                        value="N/A"
+                                        checked={values.documentChangeControlProcedure === "N/A"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">N/A</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="input-container">
+                            <p className="input-sub">12.  Do you maintain customer complaint files?</p>                
+                            <div className="radio-container">
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="maintainCustomerComplaintFiles"
+                                        value="Yes"
+                                        checked={values.maintainCustomerComplaintFiles === "Yes"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">Yes</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="maintainCustomerComplaintFiles"
+                                        value="No"
+                                        checked={values.maintainCustomerComplaintFiles === "No"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">No</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="maintainCustomerComplaintFiles"
+                                        value="N/A"
+                                        checked={values.maintainCustomerComplaintFiles === "N/A"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">N/A</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="input-container">
+                            <p className="input-sub">13.  Do you have a system for handling non-conforming material?</p>                
+                            <div className="radio-container">
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="nonconformingMaterialSystem"
+                                        value="Yes"
+                                        checked={values.nonconformingMaterialSystem === "Yes"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">Yes</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="nonconformingMaterialSystem"
+                                        value="No"
+                                        checked={values.nonconformingMaterialSystem === "No"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">No</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="nonconformingMaterialSystem"
+                                        value="N/A"
+                                        checked={values.nonconformingMaterialSystem === "N/A"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">N/A</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="input-container">
+                            <p className="input-sub">14.  Do you have a system for implementing corrective action?</p>                
+                            <div className="radio-container">
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="correctiveActionSystem"
+                                        value="Yes"
+                                        checked={values.correctiveActionSystem === "Yes"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">Yes</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="correctiveActionSystem"
+                                        value="No"
+                                        checked={values.correctiveActionSystem === "No"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">No</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="correctiveActionSystem"
+                                        value="N/A"
+                                        checked={values.correctiveActionSystem === "N/A"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">N/A</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="input-container">
+                            <p className="input-sub">15.  Do you qualify your vendors?</p>                
+                            <div className="radio-container">
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="qualifyVendors"
+                                        value="Yes"
+                                        checked={values.qualifyVendors === "Yes"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">Yes</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="qualifyVendors"
+                                        value="No"
+                                        checked={values.qualifyVendors === "No"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">No</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="qualifyVendors"
+                                        value="N/A"
+                                        checked={values.qualifyVendors === "N/A"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">N/A</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="input-container">
+                            <p className="input-sub">16.  Do you have documented inspection procedures?</p>                
+                            <div className="radio-container">
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="documentInspectionProcedures"
+                                        value="Yes"
+                                        checked={values.documentInspectionProcedures === "Yes"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">Yes</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="documentInspectionProcedures"
+                                        value="No"
+                                        checked={values.documentInspectionProcedures === "No"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">No</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="documentInspectionProcedures"
+                                        value="N/A"
+                                        checked={values.documentInspectionProcedures === "N/A"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">N/A</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="input-container">
+                            <p className="input-sub">17.  Do you have a calibration system?</p>                
+                            <div className="radio-container">
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="calibrationSystem"
+                                        value="Yes"
+                                        checked={values.calibrationSystem === "Yes"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">Yes</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="calibrationSystem"
+                                        value="No"
+                                        checked={values.calibrationSystem === "No"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">No</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="calibrationSystem"
+                                        value="N/A"
+                                        checked={values.calibrationSystem === "N/A"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">N/A</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="input-container">
+                            <p className="input-sub">18.  Do you have a documented training program?</p>                
+                            <div className="radio-container">
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="documentedTraining"
+                                        value="Yes"
+                                        checked={values.documentedTraining === "Yes"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">Yes</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="documentedTraining"
+                                        value="No"
+                                        checked={values.documentedTraining === "No"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">No</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="documentedTraining"
+                                        value="N/A"
+                                        checked={values.documentedTraining === "N/A"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">N/A</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="input-container">
+                            <p className="input-sub">19.  Do you have procedures for Shipping and Handling?</p>                
+                            <div className="radio-container">
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="shippingAndHandlingProcedure"
+                                        value="Yes"
+                                        checked={values.shippingAndHandlingProcedure === "Yes"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">Yes</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="shippingAndHandlingProcedure"
+                                        value="No"
+                                        checked={values.shippingAndHandlingProcedure === "No"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">No</label>
+                                </div>
+                                <div className="radio-group">
+                                    <input
+                                        className="radio"
+                                        type="radio"
+                                        name="shippingAndHandlingProcedure"
+                                        value="N/A"
+                                        checked={values.shippingAndHandlingProcedure === "N/A"}
+                                        onChange={handleChange}
+                                    />
+                                    <label className="radio-label">N/A</label>
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                    : 
+                    <>
+                    </>
+
+                    
+                    }
+
                 </div>
                 <button 
                     className="form-submit"
