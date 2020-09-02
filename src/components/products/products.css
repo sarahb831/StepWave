@@ -1,0 +1,25 @@
+.products-search-container {
+    padding-bottom: 30px;
+}
+
+.products-search-form {
+    margin: 0 15px 0 15px;
+}
+
+.products-search-input {
+    width: 100%;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-submit.products-search {
+    width: 70px;
+    margin-top: 10px;
+}
+
+.products-container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
