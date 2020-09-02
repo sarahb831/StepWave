@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import './product.css';
-//import IntroImage from '../../img/FactoryImage1.jpg';
 
 const Product = (props) => {
     const {id, title, image, mapLink, city, stateAddress} = props.product;
@@ -15,8 +14,8 @@ const Product = (props) => {
             <h3 className="product-title">{title}</h3>
             
             <h5 className="product-location">
-                <a className="fas fa-map-marker-alt">{mapLink}</a>
-                {`${city}, ${stateAddress}`}
+                <a className="fas fa-map-marker-alt" src={mapLink}></a>
+                {`  ${city}, ${stateAddress}`}
             </h5>
         </div>
     )

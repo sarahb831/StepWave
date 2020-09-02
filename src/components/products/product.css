@@ -18,3 +18,17 @@ a.fas.fa-map-marker-alt {
 .product-location {
     margin-top: 10px;
 }
+
+/*
+@media(min-width: 500px) {
+    .products-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 2em;
+    }
+  
+    .form-input {
+      width: 100%;
+    }
+  }
+  */

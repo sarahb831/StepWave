@@ -54,6 +54,7 @@ const Products = (props) => {
             <div className="products-container">
                 {equipmentList.map(product => 
                     <Product 
+                        key={product.id}
                         id={product.id} 
                         product={product}
                     />
